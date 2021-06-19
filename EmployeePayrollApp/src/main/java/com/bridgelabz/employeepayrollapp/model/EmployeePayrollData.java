@@ -1,5 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+
 public class EmployeePayrollData {
 	
 	private int employeeId;
@@ -8,10 +10,10 @@ public class EmployeePayrollData {
 	
 	public EmployeePayrollData() { }
 
-	public EmployeePayrollData(int employeeId, String name, long salary) {
-		this.employeeId = employeeId;
-		this.name = name;
-		this.salary = salary;
+	public EmployeePayrollData(int empId, EmployeePayrollDTO empPayrollDTO) {
+		this.employeeId = empId;
+		this.name = empPayrollDTO.name;
+		this.salary = empPayrollDTO.salary;
 	}
 
 	public int getEmployeeId() {
