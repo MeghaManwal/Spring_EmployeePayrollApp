@@ -1,6 +1,7 @@
 package com.bridgelabz.employeepayrollapp.controllers;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import com.bridgelabz.employeepayrollapp.services.IEmployeePayrollService;
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrollController {
+	private final AtomicLong counter = new AtomicLong();
 	
 	@Autowired
 	private IEmployeePayrollService employeePayrollService;

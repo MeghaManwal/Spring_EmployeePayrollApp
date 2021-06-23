@@ -1,9 +1,16 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 
+@Entity
+@Table(name = "EmployeePayroll")
 public class EmployeePayrollData {
 	
+	@Id
 	private int employeeId;
 	private String name;
 	private long salary;
