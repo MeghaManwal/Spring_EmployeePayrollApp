@@ -1,5 +1,7 @@
 package com.bridgelabz.employeepayrollapp.dto;
 
+import java.util.List;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -14,10 +16,15 @@ public @Data class EmployeePayrollDTO {
 	
 	@Min(value=5000, message="Min Wage should be more than 5000")
 	public long salary;
-
-	public EmployeePayrollDTO( String name, long salary) {
-		this.name = name;
-		this.salary = salary;
-	}
+	
+	public String gender;
+	
+	public String startDate;
+	
+	public String note;
+	
+	public String profilePic;
+	
+	public List<String> department;
 		
 }
