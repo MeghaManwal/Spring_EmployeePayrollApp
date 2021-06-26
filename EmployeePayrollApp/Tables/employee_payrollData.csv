@@ -1,3 +1,3 @@
 "employee_id","gender","name","note","profile_pic","salary","start_date"
-1,"male","Neha","All in One","../assests/profile-images/Ellipse-3.png",8000,"2019-10-29"
-2,"female","Rajeev","One and Only","../assests/profile-images/Ellipse-3.png",10000,"2019-10-01"
+1,"female","Neha","Only One","../assests/profile-images/Ellipse-3.png",8000,"2019-10-01"
+2,"male","Rajeev Singh","Number One","../assests/profile-images/Ellipse-3.png",6000,"2019-12-01"

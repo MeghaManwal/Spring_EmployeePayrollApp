@@ -1,6 +1,5 @@
 package com.bridgelabz.employeepayrollapp.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,6 @@ public class EmployeePayrollService implements IEmployeePayrollService {
 
 	@Autowired
 	private EmployeePayrollRepository employeeRepository;
-	
-	private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 	
 	@Override
 	public List<EmployeePayrollData> getEmployeePayrollData() {
@@ -54,6 +51,11 @@ public class EmployeePayrollService implements IEmployeePayrollService {
 	public void deleteEmployeePayrollData(int empId) {
 		EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
 		employeeRepository.delete(empData);
+	}
+
+	@Override
+	public List<EmployeePayrollData> getEmployeesByDepartment(String department) {
+		return employeeRepository.findEmployeesByDepartment(department);
 	}
 
 }
