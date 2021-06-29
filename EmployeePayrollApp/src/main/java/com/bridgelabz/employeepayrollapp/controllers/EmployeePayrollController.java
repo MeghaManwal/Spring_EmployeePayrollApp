@@ -30,7 +30,7 @@ public class EmployeePayrollController {
 	@Autowired
 	private IEmployeePayrollService employeePayrollService;
 	
-	@RequestMapping(value= {"","/","/get"})
+	@GetMapping(value= {"","/","/get"})
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
 		List<EmployeePayrollData> empDataList = null;
 		empDataList = employeePayrollService.getEmployeePayrollData();
@@ -75,6 +75,14 @@ public class EmployeePayrollController {
 		List<EmployeePayrollData> empDataList = null;
 		empDataList = employeePayrollService.getEmployeesByDepartment(department);
 		ResponseDTO respDTO = new ResponseDTO("Get Call for Department Successful", empDataList);
+		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping("/name/{name}")
+	public ResponseEntity<ResponseDTO> getEmployeesPayrollData(@PathVariable("name") String empName) {
+		List<EmployeePayrollData> empDataList = null;
+		empDataList = employeePayrollService.getEmployeesByName(empName);
+		ResponseDTO respDTO = new ResponseDTO("Get Call for Name Successful", empDataList);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 }
